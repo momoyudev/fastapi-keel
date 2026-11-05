@@ -1,0 +1,33 @@
+[project]
+name = "fastapi-keel"
+version = "0.1.0"
+description = "Python FastAPI 后端接口脚手架（含 Harness 提案/验收流程）"
+readme = "README.md"
+authors = [
+    { name = "momoyu", email = "momoyu@nb.me" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.162.0",
+    "uvicorn>=0.54.0",
+]
+
+# 应用型项目（uv 虚拟项目）：不声明 [build-system]，uv 不构建/安装项目自身，
+# name 仅作标识，可随意修改（改名后运行 uv lock 重新生成锁文件）。
+# 如将来要发布为库或提供 CLI 入口，参考 uv 文档补回 [build-system] 与 [project.scripts]。
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.0",
+    "pyright>=1.1.414",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[tool.pytest.ini_options]
+# 让 tests/ 内可直接 import src.*（与 `uv run pytest` 的 sys.path 行为对齐）
+pythonpath = ["."]

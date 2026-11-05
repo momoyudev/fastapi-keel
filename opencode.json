@@ -1,0 +1,59 @@
+{
+  "rules": [
+    {
+      "action": "edit",
+      "resource": "src/**",
+      "effect": "allow",
+      "reason": "业务代码目录"
+    },
+    {
+      "action": "edit",
+      "resource": "tests/**",
+      "effect": "allow",
+      "reason": "测试代码目录"
+    },
+    {
+      "action": "edit",
+      "resource": "proposal.json",
+      "effect": "allow",
+      "reason": "Agent仅追加explorations/spikes/notes，规约约束不可修改gates"
+    },
+    {
+      "action": "edit",
+      "resource": "feature_list.json",
+      "effect": "deny",
+      "reason": "feature状态仅允许独立verifier脚本修改"
+    },
+    {
+      "action": "shell",
+      "resource": "uv run python scripts/verifier.py --feature-id *",
+      "effect": "allow",
+      "reason": "唯一允许更新feature_list状态的校验入口"
+    },
+    {
+      "action": "shell",
+      "resource": "uv run pytest",
+      "effect": "allow",
+      "reason": "单元测试"
+    },
+    {
+      "action": "shell",
+      "resource": "uv run ruff *",
+      "effect": "allow",
+      "reason": "代码lint、格式化"
+    },
+    {
+      "action": "shell",
+      "resource": "uv run pyright",
+      "effect": "allow",
+      "reason": "类型检查"
+    },
+    {
+      "action": "shell",
+      "resource": "uv run uvicorn",
+      "effect": "allow",
+      "reason": "启动开发服务用于接口校验"
+    }
+  ]
+}
+

@@ -1,0 +1,39 @@
+{
+  "proposal_id": "TBD",
+  "title": "（提案阶段填写：一句话标题）",
+  "status": "discussing",
+  "createdAt": "2026-11-04T08:17:11Z",
+  "updatedAt": "2026-11-04T08:17:11Z",
+  "gates": {
+    "goal": {
+      "statement": "（提案阶段填写：本次提案要达成什么，一段话说清楚。仅人类可以确认核心闸门）",
+      "out_of_scope": [
+        "（示例：明确不做的内容，逐条列出，防止范围蔓延）"
+      ]
+    },
+    "constraints": {
+      "tech_stack": [
+        "FastAPI",
+        "uvicorn",
+        "Python 标准库"
+      ],
+      "hard_limits": [
+        "（提案阶段填写：硬性约束，逐条列出。示例：不新增运行期第三方依赖）"
+      ],
+      "security_rules": []
+    },
+    "exit_criteria": {
+      "pass": [
+        "（提案阶段填写：验收通过标准，每条必须能被 verifier 命令或测试客观判定）"
+      ],
+      "reject": [
+        "（提案阶段填写：触发即拒绝的红线，逐条列出）"
+      ]
+    }
+  },
+  "explorations": [],
+  "spikes": [],
+  "final_selection": null,
+  "notes": [],
+  "history": []
+}

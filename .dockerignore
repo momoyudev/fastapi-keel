@@ -1,0 +1,31 @@
+# 虚拟环境 / Python 产物（宿主 .venv 内含指向宿主机的 python 符号链接，绝不能进镜像）
+.venv/
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+src/__pycache__/
+
+# 版本控制与缓存
+.git/
+.gitignore
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# 测试与本地脚本不参与运行时镜像
+tests/
+scripts/
+
+# 本地密钥配置（不得打进镜像）
+.env
+
+# 编辑器 / 系统垃圾
+.idea/
+.vscode/
+*.swp
+.DS_Store
+*.log
